@@ -6,7 +6,11 @@ param appServicePlanName string
   'nonprod'
   'prod'
 ])
-param environmentType string
+
+param storageAccountNames array = [ 'saauditus'
+'saauditeurope'
+'saauditapac'
+]
 
 
 resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
