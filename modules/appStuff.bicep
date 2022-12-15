@@ -8,12 +8,12 @@ param appServicePlanName string
 ])
 
 param storageAccountNames array = [ 'saauditus'
-'saauditeurope'
-'saauditapac'
+'first'
+'second'
 ]
 
 
-resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
+resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = [for storageAccountName in storageAccountNames: {
     name: talphaidzefinalexam1
     location: location
     sku: {
@@ -23,9 +23,9 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
     properties: {
       accessTier: 'Hot'
     }
-  }
+  }[
 
-  resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
+  resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = [for i in range(1,4): {
     name: talphaidzefinalexam2
     location: location
     sku: {
@@ -36,4 +36,6 @@ resource storageAccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
       accessTier: 'Hot'
     }
   }
+
+
 
