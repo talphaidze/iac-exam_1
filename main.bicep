@@ -23,8 +23,8 @@ module appService 'modules/appStuff.bicep' = {
   name: 'appService'
   params: { 
     location: location
-    appServiceAppName: appServiceAppName
-    appServicePlanName: appServicePlanName
+    appServiceAppName: talphaidze-app
+    appServicePlanName: talphaidze-app
     environmentType: environmentType
   }
 }
